@@ -20,6 +20,11 @@ import { BoardStatus } from './board.model';
 export class BoardsController {
   constructor(private readonly boardsService: BoardsService) {}
 
+  @Get('/')
+  getAllBoards(): Promise<Board[]> {
+    return this.boardsService.getAllBoards();
+  }
+
   //@Get('/')
   //getAllBoards(): Board[] {
   //  return this.boardsService.getAllBoards();
